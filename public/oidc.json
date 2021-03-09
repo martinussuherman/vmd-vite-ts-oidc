@@ -1,0 +1,13 @@
+{
+    "authority": "https://demo.identityserver.io",
+    "clientId": "interactive.public.short",
+    "responseType": "code",
+    "scope": "openid profile email api offline_access",
+    "redirectUri": "http://localhost:3000/demo-vue-oidc/oidc-callback",
+    "popupRedirectUri": "http://localhost:3000/demo-vue-oidc/oidc-popup-callback",
+    "automaticSilentRenew": true,
+    "automaticSilentSignin": false,
+    "silentRedirectUri": "http://localhost:3000/demo-vue-oidc/silent-renew-oidc.html",
+    "postLogoutRedirectUri": "http://localhost:3000/demo-vue-oidc/",
+    "client_secret": "secret"
+}
