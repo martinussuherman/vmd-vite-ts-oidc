@@ -53,9 +53,10 @@
     </v-list>
 
     <template v-slot:append>
+      <!-- title: $t('upgrade'), -->
       <base-item
         :item="{
-          title: $t('upgrade'),
+          title: 'upgrade',
           icon: 'mdi-package-up',
           to: '/upgrade',
         }"
@@ -68,9 +69,16 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // Utilities
 import { mapState } from "vuex";
+import BaseItem from "@/components/base/Item.vue";
+import BaseItemGroup from "@/components/base/ItemGroup.vue";
 
 export default {
   name: "DashboardCoreDrawer",
+
+  components: {
+    BaseItem,
+    BaseItemGroup,
+  },
 
   props: {
     expandOnHover: {
@@ -95,6 +103,11 @@ export default {
         title: "rtables",
         icon: "mdi-clipboard-outline",
         to: "/tables/regular-tables",
+      },
+      {
+        title: "buttons",
+        icon: "mdi-backspace",
+        to: "/components/buttons",
       },
       {
         title: "typography",
@@ -135,7 +148,8 @@ export default {
     profile() {
       return {
         avatar: true,
-        title: this.$t("avatar"),
+        // title: this.$t("avatar"),
+        title: "Avatar",
       };
     },
   },
@@ -145,7 +159,8 @@ export default {
       return {
         ...item,
         children: item.children ? item.children.map(this.mapItem) : undefined,
-        title: this.$t(item.title),
+        // title: this.$t(item.title),
+        title: item.title,
       };
     },
   },

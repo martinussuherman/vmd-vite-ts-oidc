@@ -4,7 +4,7 @@
 
     <v-row>
       <v-col cols="12">
-        <base-material-card color="green">
+        <material-card color="green">
           <template v-slot:heading>
             <div class="display-2 font-weight-light">Material Design Icons</div>
 
@@ -32,7 +32,7 @@
               </v-tooltip>
             </v-col>
           </v-row>
-        </base-material-card>
+        </material-card>
       </v-col>
 
       <v-col class="mx-auto" cols="auto">
@@ -52,8 +52,14 @@
 
 <script>
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import BaseVComponent from "@/components/base/VComponent.vue";
+
 export default {
   name: "DashboardIcons",
+
+  components: {
+    BaseVComponent,
+  },
 
   data: () => ({
     icons: [

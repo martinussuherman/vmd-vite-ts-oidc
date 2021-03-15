@@ -2,7 +2,7 @@
   <v-container id="dashboard" fluid tag="section">
     <v-row>
       <v-col cols="12" lg="4">
-        <base-material-chart-card
+        <material-chart-card
           :data="emailsSubscriptionChart.data"
           :options="emailsSubscriptionChart.options"
           :responsive-options="emailsSubscriptionChart.responsiveOptions"
@@ -44,11 +44,11 @@
               >updated 10 minutes ago</span
             >
           </template>
-        </base-material-chart-card>
+        </material-chart-card>
       </v-col>
 
       <v-col cols="12" lg="4">
-        <base-material-chart-card
+        <material-chart-card
           :data="dailySalesChart.data"
           :options="dailySalesChart.options"
           color="success"
@@ -90,11 +90,11 @@
               >updated 4 minutes ago</span
             >
           </template>
-        </base-material-chart-card>
+        </material-chart-card>
       </v-col>
 
       <v-col cols="12" lg="4">
-        <base-material-chart-card
+        <material-chart-card
           :data="dataCompletedTasksChart.data"
           :options="dataCompletedTasksChart.options"
           hover-reveal
@@ -137,11 +137,11 @@
               >campaign sent 26 minutes ago</span
             >
           </template>
-        </base-material-chart-card>
+        </material-chart-card>
       </v-col>
 
       <v-col cols="12" sm="6" lg="3">
-        <base-material-stats-card
+        <material-stats-card
           color="info"
           icon="mdi-twitter"
           title="Followers"
@@ -152,7 +152,7 @@
       </v-col>
 
       <v-col cols="12" sm="6" lg="3">
-        <base-material-stats-card
+        <material-stats-card
           color="primary"
           icon="mdi-poll"
           title="Website Visits"
@@ -163,7 +163,7 @@
       </v-col>
 
       <v-col cols="12" sm="6" lg="3">
-        <base-material-stats-card
+        <material-stats-card
           color="success"
           icon="mdi-store"
           title="Revenue"
@@ -174,7 +174,7 @@
       </v-col>
 
       <v-col cols="12" sm="6" lg="3">
-        <base-material-stats-card
+        <material-stats-card
           color="orange"
           icon="mdi-sofa"
           title="Bookings"
@@ -186,7 +186,7 @@
       </v-col>
 
       <v-col cols="12" md="6">
-        <base-material-card color="warning" class="px-5 py-3">
+        <material-card color="warning" class="px-5 py-3">
           <template v-slot:heading>
             <div class="display-2 font-weight-light">Employees Stats</div>
 
@@ -197,11 +197,11 @@
           <v-card-text>
             <v-data-table :headers="headers" :items="items" />
           </v-card-text>
-        </base-material-card>
+        </material-card>
       </v-col>
 
       <v-col cols="12" md="6">
-        <base-material-card class="px-5 py-3">
+        <material-card class="px-5 py-3">
           <template v-slot:heading>
             <v-tabs
               v-model="tabs"
@@ -252,7 +252,7 @@
               </v-card-text>
             </v-tab-item>
           </v-tabs-items>
-        </base-material-card>
+        </material-card>
       </v-col>
     </v-row>
   </v-container>
@@ -271,9 +271,9 @@ export default {
           series: [[12, 17, 7, 17, 23, 18, 38]],
         },
         options: {
-          lineSmooth: this.$chartist.Interpolation.cardinal({
-            tension: 0,
-          }),
+          // lineSmooth: this.$chartist.Interpolation.cardinal({
+          //   tension: 0,
+          // }),
           low: 0,
           high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
@@ -290,9 +290,9 @@ export default {
           series: [[230, 750, 450, 300, 280, 240, 200, 190]],
         },
         options: {
-          lineSmooth: this.$chartist.Interpolation.cardinal({
-            tension: 0,
-          }),
+          // lineSmooth: this.$chartist.Interpolation.cardinal({
+          //   tension: 0,
+          // }),
           low: 0,
           high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {

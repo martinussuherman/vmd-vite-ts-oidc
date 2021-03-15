@@ -7,7 +7,7 @@
       color: 'transparent',
     }"
   >
-    <base-material-alert
+    <material-alert
       v-model="internalValue"
       :color="$attrs.color"
       :dismissible="dismissible"
@@ -16,7 +16,7 @@
       dark
     >
       <slot />
-    </base-material-alert>
+    </material-alert>
   </v-snackbar>
 </template>
 <script>

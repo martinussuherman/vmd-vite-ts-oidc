@@ -13,8 +13,9 @@
 
     <v-spacer />
 
+    <!-- :label="$t('search')" -->
     <v-text-field
-      :label="$t('search')"
+      label="Search"
       color="secondary"
       hide-details
       style="max-width: 165px"

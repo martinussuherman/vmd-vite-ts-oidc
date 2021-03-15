@@ -6,33 +6,28 @@
       <v-col cols="12" md="6">
         <v-card>
           <v-card-text>
-            <base-subheading subheading="Notification Style" />
+            <subheading subheading="Notification Style" />
 
-            <base-material-alert color="info" dark>
+            <material-alert color="info" dark>
               This is a plain notification.
-            </base-material-alert>
+            </material-alert>
 
-            <base-material-alert color="info" dark dismissible>
+            <material-alert color="info" dark dismissible>
               This is a notification with close button.
-            </base-material-alert>
+            </material-alert>
 
-            <base-material-alert color="info" dark dismissible icon="mdi-bell">
+            <material-alert color="info" dark dismissible icon="mdi-bell">
               This is a notification with close button and icon and have many
               lines. You can see that the icon and the close button are always
               vertically aligned. This is a beautiful notification. So you don't
               have to worry about the style.
-            </base-material-alert>
+            </material-alert>
 
-            <base-material-alert
-              color="primary"
-              dark
-              dismissible
-              icon="mdi-bell"
-            >
+            <material-alert color="primary" dark dismissible icon="mdi-bell">
               You can see that the icon and the close button are always
               vertically aligned. This is a beautiful notification. So you don't
               have to worry about the style.
-            </base-material-alert>
+            </material-alert>
           </v-card-text>
         </v-card>
       </v-col>
@@ -40,9 +35,9 @@
       <v-col cols="12" md="6">
         <v-card>
           <v-card-text>
-            <base-subheading subheading="Notification states" />
+            <subheading subheading="Notification states" />
 
-            <base-material-alert
+            <material-alert
               v-for="color in colors"
               :key="color"
               :color="color"
@@ -51,17 +46,17 @@
             >
               <span class="text-uppercase" v-text="color" /> — This is a regular
               alert made with the color of "{{ color }}"
-            </base-material-alert>
+            </material-alert>
 
-            <base-material-alert color="secondary" dark dismissible>
+            <material-alert color="secondary" dark dismissible>
               <span>PRIMARY</span> — This is a regular alert made with the color
               "secondary"
-            </base-material-alert>
+            </material-alert>
 
-            <base-material-alert color="pink darken-1" dark dismissible>
+            <material-alert color="pink darken-1" dark dismissible>
               <span>PINK DARKEN-1</span> — This is a regular alert made with the
               color "pink darken-1"
-            </base-material-alert>
+            </material-alert>
           </v-card-text>
         </v-card>
       </v-col>
@@ -69,10 +64,7 @@
       <v-col cols="12">
         <v-card>
           <v-card-text class="text-center">
-            <base-subheading
-              class="text-center"
-              subheading="Snackbar Locations"
-            />
+            <subheading class="text-center" subheading="Snackbar Locations" />
 
             <v-row class="mt-n12" justify="center">
               <v-col cols="10" lg="8">
@@ -93,7 +85,7 @@
               </v-col>
             </v-row>
 
-            <base-subheading class="text-center" subheading="Dialogs" />
+            <subheading class="text-center" subheading="Dialogs" />
 
             <v-row class="mt-n12" justify="center">
               <v-col cols="10" lg="8">
@@ -132,7 +124,7 @@
       </v-col>
     </v-row>
 
-    <base-material-snackbar
+    <material-snackbar
       v-model="snackbar"
       :type="color"
       v-bind="{
@@ -143,7 +135,7 @@
       Welcome to
       <span class="font-weight-bold">&nbsp;MATERIAL DASHBOARD&nbsp;</span> — a
       beautiful admin panel for every web developer.
-    </base-material-snackbar>
+    </material-snackbar>
 
     <v-dialog v-model="dialog" max-width="500">
       <v-card class="text-center">
@@ -285,8 +277,14 @@
 
 <script>
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import BaseVComponent from "@/components/base/VComponent.vue";
+
 export default {
   name: "DashboardNotifications",
+
+  components: {
+    BaseVComponent,
+  },
 
   data: () => ({
     color: "info",

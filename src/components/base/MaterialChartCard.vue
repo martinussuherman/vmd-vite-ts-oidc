@@ -1,11 +1,11 @@
 <template>
-  <base-material-card
+  <material-card
     class="v-card--material-chart"
     v-bind="$attrs"
     v-on="$listeners"
   >
     <template v-slot:heading>
-      <chartist
+      <!-- <chartist
         :data="data"
         :event-handlers="eventHandlers"
         :options="options"
@@ -13,7 +13,7 @@
         :responsive-options="responsiveOptions"
         :type="type"
         style="max-height: 150px"
-      />
+      /> -->
     </template>
 
     <slot slot="reveal-actions" name="reveal-actions" />
@@ -21,7 +21,7 @@
     <slot />
 
     <slot slot="actions" name="actions" />
-  </base-material-card>
+  </material-card>
 </template>
 
 <script>

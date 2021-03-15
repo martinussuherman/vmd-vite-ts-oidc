@@ -2,7 +2,7 @@
   <v-container id="regular-tables" fluid tag="section">
     <base-v-component heading="Simple Tables" link="components/simple-tables" />
 
-    <base-material-card
+    <material-card
       icon="mdi-clipboard-text"
       title="Simple Table"
       class="px-5 py-3"
@@ -68,11 +68,11 @@
           </tr>
         </tbody>
       </v-simple-table>
-    </base-material-card>
+    </material-card>
 
     <div class="py-3" />
 
-    <base-material-card
+    <material-card
       color="success"
       dark
       icon="mdi-clipboard-plus"
@@ -140,6 +140,16 @@
           </tr>
         </tbody>
       </v-simple-table>
-    </base-material-card>
+    </material-card>
   </v-container>
 </template>
+
+<script>
+import BaseVComponent from "@/components/base/VComponent.vue";
+
+export default {
+  components: {
+    BaseVComponent,
+  },
+};
+</script>
