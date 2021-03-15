@@ -2,11 +2,6 @@ import Vue from "vue";
 import VueRouter, { NavigationGuard, Route, RouteConfig } from "vue-router";
 import { vuexOidcCreateRouterMiddleware } from "vuex-oidc";
 import { configureVuexStore } from "@/store";
-import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
-import OidcCallback from "@/views/OidcCallback.vue";
-import OidcPopupCallback from "@/views/OidcPopupCallback.vue";
-import OidcCallbackError from "@/views/OidcCallbackError.vue";
 
 interface VuexOidcRouteMeta {
   isPublic?: boolean;
@@ -29,46 +24,89 @@ async function createOidcRoute(): Promise<NavigationGuard<Vue>> {
   );
 }
 
-export async function configureRouter() {
+export async function configureRouter(): Promise<VueRouter> {
   Vue.use(VueRouter);
 
   const routes: Array<VuexOidcRouteConfig> = [
     {
       path: "/",
-      name: "Home",
-      component: Home,
-      meta: {
-        isPublic: true,
-      },
-    },
-    {
-      path: "/about",
-      name: "About",
-      component: About,
-    },
-    {
-      path: "/oidc-callback", // Needs to match redirect_uri in you oidcSettings
-      name: "OidcCallback",
-      component: OidcCallback,
-      meta: {
-        isOidcCallback: true,
-      },
-    },
-    {
-      path: "/oidc-popup-callback", // Needs to match popupRedirectUri in you oidcSettings
-      name: "oidcPopupCallback",
-      component: OidcPopupCallback,
-      meta: {
-        isOidcCallback: true,
-      },
-    },
-    {
-      path: "/oidc-callback-error",
-      name: "oidcCallbackError",
-      component: OidcCallbackError,
-      meta: {
-        isPublic: true,
-      },
+      component: () => import("@/views/dashboard/Index.vue"),
+      children: [
+        // Dashboard
+        {
+          name: "Dashboard",
+          path: "",
+          component: () => import("@/views/dashboard/Dashboard.vue"),
+        },
+        // Pages
+        {
+          name: "User Profile",
+          path: "pages/user",
+          component: () => import("@/views/dashboard/pages/UserProfile.vue"),
+        },
+        {
+          name: "Notifications",
+          path: "components/notifications",
+          component: () =>
+            import("@/views/dashboard/component/Notifications.vue"),
+        },
+        {
+          name: "Icons",
+          path: "components/icons",
+          component: () => import("@/views/dashboard/component/Icons.vue"),
+        },
+        {
+          name: "Buttons",
+          path: "components/buttons",
+          component: () => import("@/views/dashboard/component/Buttons.vue"),
+        },
+        {
+          name: "Typography",
+          path: "components/typography",
+          component: () => import("@/views/dashboard/component/Typography.vue"),
+        },
+        {
+          name: "Regular Tables",
+          path: "tables/regular-tables",
+          component: () => import("@/views/dashboard/tables/RegularTables.vue"),
+        },
+        // Maps
+        {
+          name: "Google Maps",
+          path: "maps/google-maps",
+          component: () => import("@/views/dashboard/maps/GoogleMaps.vue"),
+        },
+        // Upgrade
+        {
+          name: "Upgrade",
+          path: "upgrade",
+          component: () => import("@/views/dashboard/Upgrade.vue"),
+        },
+        {
+          path: "oidc-callback",
+          name: "OidcCallback",
+          component: () => import("@/views/OidcCallback.vue"),
+          meta: {
+            isOidcCallback: true,
+          },
+        },
+        {
+          path: "oidc-popup-callback",
+          name: "oidcPopupCallback",
+          component: () => import("@/views/OidcPopupCallback.vue"),
+          meta: {
+            isOidcCallback: true,
+          },
+        },
+        {
+          path: "oidc-callback-error",
+          name: "oidcCallbackError",
+          component: () => import("@/views/OidcCallbackError.vue"),
+          meta: {
+            isPublic: true,
+          },
+        },
+      ],
     },
   ];
 
