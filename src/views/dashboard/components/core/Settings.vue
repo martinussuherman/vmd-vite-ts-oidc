@@ -176,7 +176,6 @@ export default {
       "/pexels-antonio-dillard-4462780.jpg",
     ],
     menu: false,
-    saveImage: "",
     showImg: true,
   }),
 
@@ -190,24 +189,21 @@ export default {
       this.$vuetify.theme.themes.dark.primary = val;
     },
     showImg(val) {
-      if (!val) {
-        this.saveImage = this.barImage;
-        this.setBarImage("");
-      } else if (this.saveImage) {
-        this.setBarImage(this.saveImage);
-        this.saveImage = "";
+      if (val) {
+        this.setBarImage(this.image);
       } else {
-        this.setBarImage(val);
+        this.setBarImage("/blank.png");
       }
     },
     image(val) {
       this.setBarImage(val);
+      this.showImg = true;
     },
   },
 
   methods: {
     ...mapMutations({
-      setBarImage: "SET_BAR_IMAGE",
+      setBarImage: "setBarImage",
     }),
   },
 };
