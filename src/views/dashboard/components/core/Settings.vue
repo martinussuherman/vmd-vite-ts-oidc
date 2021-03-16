@@ -163,13 +163,17 @@ export default {
   data: () => ({
     color: "#E91E63",
     colors: ["#9C27b0", "#00CAE3", "#4CAF50", "#ff9800", "#E91E63", "#FF5252"],
-    image:
-      "https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg",
+    image: "/pexels-brady-knoll-5187131.jpg",
+
     images: [
-      "https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg",
-      "https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-2.jpg",
-      "https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-3.jpg",
-      "https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-4.jpg",
+      // Photo by Brady Knoll from Pexels - https://www.pexels.com/photo/narrow-pathway-through-coniferous-trees-in-forest-5187131/
+      "/pexels-brady-knoll-5187131.jpg",
+      // Photo by Alex Andrews from Pexels - https://www.pexels.com/photo/photo-of-deep-sky-object-816608/
+      "/pexels-alex-andrews-816608.jpg",
+      // Photo by Zhaocan Li from Pexels - https://www.pexels.com/photo/snow-covered-mountain-1755243/
+      "/pexels-zhaocan-li-1755243.jpg",
+      // Photo by Antonio Dillard from Pexels - https://www.pexels.com/photo/exciting-art-composition-on-yellow-background-4462780/
+      "/pexels-antonio-dillard-4462780.jpg",
     ],
     menu: false,
     saveImage: "",
