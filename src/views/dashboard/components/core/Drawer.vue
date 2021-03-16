@@ -168,7 +168,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~vuetify/src/styles/tools/_rtl.sass'
+@import 'vuetify/src/styles/tools/_rtl.sass'
 
 #core-navigation-drawer
   .v-list-group__header.v-list-item--active:before
