@@ -116,6 +116,6 @@ export async function configureRouter(): Promise<VueRouter> {
     routes,
   });
 
-  router.beforeEach(await createOidcRoute());
+  // router.beforeEach(await createOidcRoute());
   return router;
 }
