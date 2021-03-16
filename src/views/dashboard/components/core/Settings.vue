@@ -186,7 +186,8 @@ export default {
 
   watch: {
     color(val) {
-      this.$vuetify.theme.themes[this.isDark ? "dark" : "light"].primary = val;
+      this.$vuetify.theme.themes.light.primary = val;
+      this.$vuetify.theme.themes.dark.primary = val;
     },
     showImg(val) {
       if (!val) {
