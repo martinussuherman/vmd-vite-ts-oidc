@@ -1,1 +1,0 @@
-import{V as t}from"./main.99df4bc8.js";var e=t.extend({name:"ssr-bootable",data:()=>({isBooted:!1}),mounted(){window.requestAnimationFrame((()=>{this.$el.setAttribute("data-booted","true"),this.isBooted=!0}))}});export{e as S};
