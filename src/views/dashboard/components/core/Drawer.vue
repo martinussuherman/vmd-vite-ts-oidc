@@ -139,7 +139,7 @@ export default {
         return this.$store.state.drawer;
       },
       set(val) {
-        this.$store.commit("SET_DRAWER", val);
+        this.$store.commit("setDrawer", val);
       },
     },
     computedItems() {

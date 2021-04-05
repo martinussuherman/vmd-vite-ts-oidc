@@ -167,7 +167,7 @@ export default {
   methods: {
     ...mapActions("oidcStore", ["signOutOidc"]),
     ...mapMutations({
-      setDrawer: "SET_DRAWER",
+      setDrawer: "setDrawer",
     }),
   },
 };
