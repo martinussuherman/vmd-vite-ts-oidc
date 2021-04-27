@@ -1,1 +1,0 @@
-const e={inserted:function(e,i){const n=i.value,o=i.options||{passive:!0};window.addEventListener("resize",n,o),e._onResize={callback:n,options:o},i.modifiers&&i.modifiers.quiet||n()},unbind:function(e){if(!e._onResize)return;const{callback:i,options:n}=e._onResize;window.removeEventListener("resize",i,n),delete e._onResize}};export{e as R};
