@@ -1,4 +1,4 @@
-import{V as e}from"./vendor.c2655881.js";
+import{V as e}from"./vendor.872e8b1b.js";
 /**
   * vue-class-component v7.2.6
   * (c) 2015-present Evan You
