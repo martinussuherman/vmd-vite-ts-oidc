@@ -12,6 +12,9 @@ const theme: Partial<VuetifyThemeVariant> = {
   secondary: "#9C27b0",
   accent: "#9C27b0",
   info: "#00CAE3",
+  error: "ff0000",
+  success: "00ff00",
+  warning: "ffdd55",
 };
 
 export default new Vuetify({
